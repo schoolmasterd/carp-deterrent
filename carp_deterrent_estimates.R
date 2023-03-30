@@ -135,8 +135,8 @@ overlay_pltr<-function(data_name,data_name2){
 dat_nms<-c("q21_bh_ans","q32_bh_ans","q43_bh_ans","q54_bh_ans","q65_bh_ans")
 dat_nms2<-c("q21_s_ans","q32_s_ans","q43_s_ans","q54_s_ans","q65_s_ans")
 
-#create Figure 1
-pdf("Output/Figure1.pdf")
+####create Figure 2####
+pdf("Figure2.pdf")
 par(mfrow=c(3,2),mar=c(1,2,2,1),oma=c(5,5,1,1))
 for(i in 1:5){
   overlay_pltr(dat_nms[i],dat_nms2[i])
@@ -144,8 +144,8 @@ for(i in 1:5){
   mtext(paste0("(",letters[i],")"),adj=-.2,padj=.6)
 }
 plot(0:1,0:1,yaxt="n",xaxt='n',ylab='',xlab='',bty='n',type='n')
-legend("center",legend = c("Big Head","Silver"),lty=c(1,2),lwd=2,bty = 'n',cex=1.5)
-mtext("Recruitment Rate (b0)",side = 1,outer = TRUE,cex=1.5,padj =2 )
+legend("center",legend = c("Bighead","Silver"),lty=c(1,2),lwd=2,bty = 'n',cex=1.5)
+mtext(bquote('Recruitment Rate ('*b[0]*')'),side = 1,outer = TRUE,cex=1.5,padj =2 )
 mtext(bquote('%'*Delta*e^tilde(r[1])),side = 2,outer = TRUE,cex=1.5,padj=-1 )
 dev.off()
 
@@ -171,8 +171,8 @@ overlay_pltr_meta<-function(data_name,data_name2){
             rev(mn2+1.96*std2)),col=cols,border = NA)
 }
 
-#create Figure 2
-pdf("Output/Figure2.pdf")
+####create Figure 3####
+pdf("Figure3.pdf")
 par(mfrow=c(3,2),mar=c(1,3,2,1),oma=c(5,5,1,1))
 #par(mfrow=c(3,2),pty = "s",mar=c(4,2,1,1))
 for(i in 1:5){
@@ -181,8 +181,8 @@ for(i in 1:5){
   mtext(paste0("(",letters[i],")"),adj=-.2,padj=.6)
 }
 plot(0:1,0:1,yaxt="n",xaxt='n',ylab='',xlab='',bty='n',type='n')
-legend("center",legend = c("Big Head","Silver"),lty=c(1,2),lwd=2,bty = 'n',cex=1.5)
-mtext("Recruitment Rate (b0)",side = 1,outer = TRUE,cex=1.5,padj =2 )
+legend("center",legend = c("Bighead","Silver"),lty=c(1,2),lwd=2,bty = 'n',cex=1.5)
+mtext(bquote('Recruitment Rate ('*b[0]*')'),side = 1,outer = TRUE,cex=1.5,padj =2 )
 mtext(bquote('%'*Delta*tilde(lambda)[1]),side = 2,outer = TRUE,cex=1.5,padj=-1 )
 dev.off()
 
@@ -276,8 +276,8 @@ pltr_trans_meta<-function(data_name,data_name2){
 dat_nms<-c("q21_bh_ans_t","q32_bh_ans_t","q43_bh_ans_t","q54_bh_ans_t","q65_bh_ans_t")
 dat_nms2<-c("q21_s_ans_t","q32_s_ans_t","q43_s_ans_t","q54_s_ans_t","q65_s_ans_t")
 
-
-pdf("Output/Figure3.pdf")
+####Figure 4####
+pdf("Figure4.pdf")
 par(mfrow=c(3,2),mar=c(1,2,2,1),oma=c(5,5,1,1))
 #par(mfrow=c(3,2),pty = "s",mar=c(4,2,1,1))
 for(i in 1:5){
@@ -287,8 +287,8 @@ for(i in 1:5){
   
 }
 plot(0:1,0:1,yaxt="n",xaxt='n',ylab='',xlab='',bty='n',type='n')
-legend("center",legend = c("Big Head","Silver"),lty=c(1,2),lwd=2,bty = 'n',cex=1.5)
-mtext("Recruitment Rate (b0)",side = 1,outer = TRUE,cex=1.5,padj =2 )
+legend("center",legend = c("Bighead","Silver"),lty=c(1,2),lwd=2,bty = 'n',cex=1.5)
+mtext(bquote('Recruitment Rate ('*b[0]*')'),side = 1,outer = TRUE,cex=1.5,padj =2 )
 mtext("Transient Timescale (Years)",side = 2,outer = TRUE,cex=1.5,padj=-2 )
 dev.off()
 
@@ -315,8 +315,8 @@ pltr_trans_dres<-function(data_name,data_name2){
   abline(h=1,lty=3)
 }
 
-
-pdf("Output/Figure4.pdf")
+####Figure 5####
+pdf("Figure5.pdf")
 par(mfrow=c(3,2),mar=c(1,2,3,1),oma=c(5,5,1,1))
 for(i in 1:5){
   pltr_trans_dres(dat_nms[i],dat_nms2[i])
@@ -325,12 +325,12 @@ for(i in 1:5){
   
 }
 plot(0:1,0:1,yaxt="n",xaxt='n',ylab='',xlab='',bty='n',type='n')
-legend("center",legend = c("Big Head","Silver"),lty=c(1,2),lwd=2,bty = 'n',cex=1.5)
-mtext("Recruitment Rate (b0)",side = 1,outer = TRUE,cex=1.5,padj =2 )
+legend("center",legend = c("Bighead","Silver"),lty=c(1,2),lwd=2,bty = 'n',cex=1.5)
+mtext(bquote('Recruitment Rate ('*b[0]*')'),side = 1,outer = TRUE,cex=1.5,padj =2 )
 mtext(bquote('%'*Delta*'max('*hat(n)[1]*')'[t]),side = 2,outer = TRUE,cex=1.5,padj=-1 )
 dev.off()
 
-#create Figure 5
+####create Figure 6####
 #calculate averages percent change in per capita grwoth rate of Dresden Island population
 dat_nms<-c("q21_bh_ans","q32_bh_ans","q43_bh_ans","q54_bh_ans","q65_bh_ans")
 dat_nms2<-c("q21_s_ans","q32_s_ans","q43_s_ans","q54_s_ans","q65_s_ans")
@@ -346,15 +346,15 @@ for(i in 1:5){
 }
 
 
-pdf("Output/Figure5.pdf")
+pdf("Figure6.pdf")
 par(oma=c(0,1,0,0))
-plot(c(Ebh[6:10],Esv[6:10]),c(bh_avg,sv_avg),pch=21,bg=rep(c("black","grey"),each=5),bty="n",
+plot(c(Ebh[6:10],Esv[6:10]),c(bh_avg,sv_avg),pch=21,bg=rep(c("black","grey45"),each=5),bty="n",
      xlab="Movement Probability",ylab="",cex.lab=1.25,cex.axis=1.25,cex=1.25)
 mtext(bquote('%'*Delta*e^tilde(r)[1]),2,padj=-3,cex=1.25)
 for(i in 1:5)text(Ebh[6:10][i],bh_avg[i],bquote(phi[.(i+1)*','*.(i)]),pos=1,col = "black")
-for(i in 1:5)text(Esv[6:10][i],sv_avg[i],bquote(phi[.(i+1)*','*.(i)]),pos = 4,col="darkgrey")
+for(i in 1:5)text(Esv[6:10][i],sv_avg[i],bquote(phi[.(i+1)*','*.(i)]),pos = 4,col="grey45")
 #text(.1,-.3,bquote('%'*Delta*e^tilde(r[1])))
-legend("topleft",legend = c("Big Head","Silver"),pch=21,pt.bg =c("black","darkgrey"),bty = "n")
+legend("topleft",legend = c("Bighead","Silver"),pch=21,pt.bg =c("black","grey45"),bty = "n")
 dev.off()
 
 
