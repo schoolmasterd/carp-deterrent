@@ -1,7 +1,7 @@
 # carp-deterrent
 This code accompanies the mauscript:
 
-Schoolmaster et al.: Multi-scale effects of non-physical movement deterrents on invasive carp metapopulations.
+Schoolmaster et al.: Multi-scale effects of behavioral movement deterrents on invasive carp metapopulations.
 It includes all the simulations, analyses and code for creating the results and figures. 
 
 
