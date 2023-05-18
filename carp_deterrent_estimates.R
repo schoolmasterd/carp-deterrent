@@ -49,7 +49,7 @@ names(wts)<-unlist(strsplit(arg,","))[1:10]
 b0_vec<-seq(0,1,.01)
 
 barrier<-function(nm,amt=0.5,len=10,pars){
-  #create vector to modify for barrier deterrents
+  #create vector to modify for behavioral barrier
   wts<-rep(1,10)
   names(wts)<-c("q12","q23","q34","q45","q56","q21","q32","q43","q54","q65")
   #modify the wts of the movement probs in nm by the proportion amt
@@ -146,7 +146,7 @@ for(i in 1:5){
 plot(0:1,0:1,yaxt="n",xaxt='n',ylab='',xlab='',bty='n',type='n')
 legend("center",legend = c("Bighead","Silver"),lty=c(1,2),lwd=2,bty = 'n',cex=1.5)
 mtext(bquote('Recruitment Rate ('*b[0]*')'),side = 1,outer = TRUE,cex=1.5,padj =2 )
-mtext(bquote('%'*Delta*e^tilde(r[1])),side = 2,outer = TRUE,cex=1.5,padj=-1 )
+mtext(bquote('Pct. Change Growth Rate (%'*Delta*e^tilde(r[1])*')'),side = 2,outer = TRUE,cex=1.5,padj=-0.8 )
 dev.off()
 
 #create plotter function for metapopulation result
@@ -183,7 +183,7 @@ for(i in 1:5){
 plot(0:1,0:1,yaxt="n",xaxt='n',ylab='',xlab='',bty='n',type='n')
 legend("center",legend = c("Bighead","Silver"),lty=c(1,2),lwd=2,bty = 'n',cex=1.5)
 mtext(bquote('Recruitment Rate ('*b[0]*')'),side = 1,outer = TRUE,cex=1.5,padj =2 )
-mtext(bquote('%'*Delta*tilde(lambda)[1]),side = 2,outer = TRUE,cex=1.5,padj=-1 )
+mtext(bquote('Pct. Change Metapopulation Growth Rate (%'*Delta*tilde(lambda)[1]*')'),side = 2,outer = TRUE,cex=1.5,padj=-1 )
 dev.off()
 
 #### TRANSIENT DYNAMICS ####
@@ -327,11 +327,11 @@ for(i in 1:5){
 plot(0:1,0:1,yaxt="n",xaxt='n',ylab='',xlab='',bty='n',type='n')
 legend("center",legend = c("Bighead","Silver"),lty=c(1,2),lwd=2,bty = 'n',cex=1.5)
 mtext(bquote('Recruitment Rate ('*b[0]*')'),side = 1,outer = TRUE,cex=1.5,padj =2 )
-mtext(bquote('%'*Delta*'max('*hat(n)[1]*')'[t]),side = 2,outer = TRUE,cex=1.5,padj=-1 )
+mtext(bquote('Pct. Change Max. Pop. Dresden Island (%'*Delta*'max('*hat(n)[1]*')'[t]*")"),side = 2,outer = TRUE,cex=1.5,padj=-1 )
 dev.off()
 
 ####create Figure 6####
-#calculate averages percent change in per capita grwoth rate of Dresden Island population
+#calculate averages percent change in per-capita growth rate of Dresden Island population
 dat_nms<-c("q21_bh_ans","q32_bh_ans","q43_bh_ans","q54_bh_ans","q65_bh_ans")
 dat_nms2<-c("q21_s_ans","q32_s_ans","q43_s_ans","q54_s_ans","q65_s_ans")
 
@@ -350,10 +350,9 @@ pdf("Figure6.pdf")
 par(oma=c(0,1,0,0))
 plot(c(Ebh[6:10],Esv[6:10]),c(bh_avg,sv_avg),pch=21,bg=rep(c("black","grey45"),each=5),bty="n",
      xlab="Movement Probability",ylab="",cex.lab=1.25,cex.axis=1.25,cex=1.25)
-mtext(bquote('%'*Delta*e^tilde(r)[1]),2,padj=-3,cex=1.25)
+mtext(bquote('Pct. Change Growth Rate (%'*Delta*e^tilde(r)[1]*')'),2,padj=-2,cex=1.25)
 for(i in 1:5)text(Ebh[6:10][i],bh_avg[i],bquote(phi[.(i+1)*','*.(i)]),pos=1,col = "black")
 for(i in 1:5)text(Esv[6:10][i],sv_avg[i],bquote(phi[.(i+1)*','*.(i)]),pos = 4,col="grey45")
-#text(.1,-.3,bquote('%'*Delta*e^tilde(r[1])))
 legend("topleft",legend = c("Bighead","Silver"),pch=21,pt.bg =c("black","grey45"),bty = "n")
 dev.off()
 
