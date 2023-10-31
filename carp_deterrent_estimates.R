@@ -146,7 +146,7 @@ for(i in 1:5){
 plot(0:1,0:1,yaxt="n",xaxt='n',ylab='',xlab='',bty='n',type='n')
 legend("center",legend = c("Bighead","Silver"),lty=c(1,2),lwd=2,bty = 'n',cex=1.5)
 mtext(bquote('Recruitment Rate ('*b[0]*')'),side = 1,outer = TRUE,cex=1.5,padj =2 )
-mtext(bquote('Pct. Change Growth Rate (%'*Delta*e^tilde(r[1])*')'),side = 2,outer = TRUE,cex=1.5,padj=-0.8 )
+mtext(bquote('Pct. Change Growth Rate (%'*Delta*Lambda*')'),side = 2,outer = TRUE,cex=1.5,padj=-0.8 )
 dev.off()
 
 #create plotter function for metapopulation result
@@ -350,7 +350,7 @@ pdf("Figure6.pdf")
 par(oma=c(0,1,0,0))
 plot(c(Ebh[6:10],Esv[6:10]),c(bh_avg,sv_avg),pch=21,bg=rep(c("black","grey45"),each=5),bty="n",
      xlab="Movement Probability",ylab="",cex.lab=1.25,cex.axis=1.25,cex=1.25)
-mtext(bquote('Pct. Change Growth Rate (%'*Delta*e^tilde(r)[1]*')'),2,padj=-2,cex=1.25)
+mtext(bquote('Pct. Change Growth Rate (%'*Delta*Lambda*')'),2,padj=-2,cex=1.25)
 for(i in 1:5)text(Ebh[6:10][i],bh_avg[i],bquote(phi[.(i+1)*','*.(i)]),pos=1,col = "black")
 for(i in 1:5)text(Esv[6:10][i],sv_avg[i],bquote(phi[.(i+1)*','*.(i)]),pos = 4,col="grey45")
 legend("topleft",legend = c("Bighead","Silver"),pch=21,pt.bg =c("black","grey45"),bty = "n")
