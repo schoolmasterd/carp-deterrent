@@ -9,6 +9,8 @@ This R script requires the custom package schoolmasterd/sigma-matrix (https://gi
   Make Developing R Packages Easier. R package version 2.4.5.
   https://CRAN.R-project.org/package=devtools), or by downloading it directly and installing from local.
 
+Code runtime: Approx. 10 min.
+
 Contact: Donald R. Schoolmater Jr
          schoolmasterd@usgs.gov
          
